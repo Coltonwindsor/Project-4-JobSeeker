@@ -18,5 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/', include('jobseeker_app.urls'))
+    path('', views.FrontendAppView.as_view()),
+    path('api/v1/', include('jobseeker_app.urls')),
+    re_path(r'^.*$', views.FrontendAppView.as_view()),
 ]
