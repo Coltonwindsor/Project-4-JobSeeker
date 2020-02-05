@@ -1,7 +1,7 @@
 {
   "name": "jobseeker",
   "scripts": {
-    "build": "cd client && npm install && npm run build && cd ..",
+    "build": "echo 'nothing to do until django is running'.",
     "postinstall": "npm run build && echo 'Client built!'"
   }
 }
