@@ -3,16 +3,16 @@ from .models import Document, Event, Job, Response, Contact
 
 class ContactSerializer(serializers.ModelSerializer):
     class Meta: 
-        model = Document
+        model = Contact
         fields = ('__all__')
 
 class ResponseSerializer(serializers.ModelSerializer):
     class Meta: 
-        model = Document
+        model = Response
         fields = ('__all__')
 
 class JobSerializer(serializers.ModelSerializer):
-    respone = ResponseSerializer(many=True, read_only=True)
+    response = ResponseSerializer(many=True, read_only=True)
     class Meta: 
         model = Job
         fields = ('id', 'company', 'title', 'date_posted', 'description', 'requirements', 'salary', 'applied_to', 'response' )

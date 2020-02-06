@@ -37,7 +37,7 @@ class Job(models.Model):
 class Response(models.Model):
     job = models.ForeignKey(Job, on_delete=models.CASCADE, related_name='jobs')
     company = models.CharField(max_length=100)
-    date_recieved = models.CharField(max_length=100)
+    date_received = models.CharField(max_length=100)
     content = models.TextField(default = '', blank=True)
 
     def __str__(self):

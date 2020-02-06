@@ -19,6 +19,7 @@ from . import view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('admin', admin.site.urls), 
     path('', view.FrontendAppView.as_view()),
     path('api/v1/', include('jobseeker_app.urls')),
     re_path(r'^.*$', view.FrontendAppView.as_view()),
