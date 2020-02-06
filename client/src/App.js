@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import NavBar from './components/NavBar'
 import HomePage from './components/HomePage'
 import Document from './components/Document'
 import Event from './components/Event'
@@ -17,11 +18,8 @@ class App extends Component {
   render() {
     return (
       <div>
-
-        <div>
-          <h1>Hello World</h1>
-        </div>
         <Router>
+          <div><NavBar /></div>
           <Switch>
             <Route exact path='/document' component={Document}></Route>
             <Route exact path='/event' component={Event}></Route>
