@@ -121,31 +121,8 @@ export default class Contact extends Component {
                             <div className="inputBoxDiv">
                                 <input type="submit" vlaue="Create"></input>
                             </div>
-
-
-
-
-
                         </form>
-
-
-
-
-
-
-
-
-
-
-
                     </div>) : null}
-
-
-
-
-
-
-
             </div>
         )
     }
