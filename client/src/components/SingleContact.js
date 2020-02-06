@@ -50,17 +50,18 @@ export default class SingleContact extends Component {
             <div>
                 {this.state.redirect === true ? <Redirect to='/contact' /> : null}
                 <h1>{this.state.contact.name}</h1>
-                <div>
-                    <div>
-                        {this.state.contact.company}
-                    </div>
-                    <div>
-                        {this.state.contact.email}
-                    </div>
-                    <div>
-                        {this.state.contact.phone_number}
-                    </div>
-                </div>
+                {this.state.updateFormInvisable === false ?
+                    (<div>
+                        <div>
+                            {this.state.contact.company}
+                        </div>
+                        <div>
+                            {this.state.contact.email}
+                        </div>
+                        <div>
+                            {this.state.contact.phone_number}
+                        </div>
+                    </div>) : null}
                 {this.state.updateFormInvisable === false ?
                     <div className="addEntryButtonDiv">
                         <button className="addEntryButton" onClick={this.toggleUpdateForm}>Edit Contact</button>
@@ -70,6 +71,47 @@ export default class SingleContact extends Component {
                         <button className="addEntryButton" onClick={this.toggleUpdateForm}>Back</button>
                         <button className="addEntryButton" onClick={this.deleteContact}>Delete Contact</button>
                     </div>}
+                {this.state.updateFormInvisable === true ?
+                    <div>
+                        <form onSubmit={this.onSubmit}>
+                            <div className='inputBoxDiv'>
+                                <input
+                                    onChange={this.onChange}
+                                    type="text"
+                                    name="name"
+                                    placeholder='name'
+                                    value={this.state.contact.name} />
+                            </div>
+                            <div className='inputBoxDiv'>
+                                <input
+                                    onChange={this.onChange}
+                                    type="text"
+                                    name="company"
+                                    placeholder='company'
+                                    value={this.state.contact.company} />
+                            </div>
+                            <div className='inputBoxDiv'>
+                                <input
+                                    onChange={this.onChange}
+                                    type="text"
+                                    name="email"
+                                    placeholder='email'
+                                    value={this.state.contact.email} />
+                            </div>
+                            <div className='inputBoxDiv'>
+                                <input
+                                    onChange={this.onChange}
+                                    type="text"
+                                    name="phone_number"
+                                    placeholder='phone number'
+                                    value={this.state.contact.phone_number} />
+                            </div>
+                            <div className='inputBoxDiv'>
+                                <input type="submit"
+                                    value="Update Contact" />
+                            </div>
+                        </form>
+                    </div> : null}
             </div>
         )
     }
