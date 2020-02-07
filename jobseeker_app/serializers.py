@@ -12,10 +12,10 @@ class ResponseSerializer(serializers.ModelSerializer):
         fields = ('__all__')
 
 class JobSerializer(serializers.ModelSerializer):
-    response = ResponseSerializer(many=True, read_only=True)
+    responses = ResponseSerializer(many=True, read_only=True)
     class Meta: 
         model = Job
-        fields = ('id', 'company', 'title', 'date_posted', 'description', 'requirements', 'salary', 'applied_to', 'response' )
+        fields = ('id', 'company', 'title', 'date_posted', 'description', 'requirements', 'salary', 'applied_to', 'responses' )
 
 class EventSerializer(serializers.ModelSerializer):
     class Meta: 

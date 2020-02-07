@@ -29,13 +29,13 @@ class Job(models.Model):
     description = models.TextField(default = '', blank=True)
     requirements = models.TextField(default = '', blank=True)
     salary = models.IntegerField(default=0)
-    applied_to = models.BooleanField(default=False)
+    applied_to = models.BooleanField(default=False, blank=True)
 
     def __str__(self):
         return f'{self.company} - {self.title}'
 
 class Response(models.Model):
-    job = models.ForeignKey(Job, on_delete=models.CASCADE, related_name='jobs')
+    job = models.ForeignKey(Job, on_delete=models.CASCADE, related_name='responses')
     company = models.CharField(max_length=100)
     date_received = models.CharField(max_length=100)
     content = models.TextField(default = '', blank=True)

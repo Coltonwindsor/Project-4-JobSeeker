@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 
@@ -9,7 +8,7 @@ export default class Homepage extends Component {
         documents: [],
         events: [],
         jobs: [],
-        responses: [],
+        // responses: [],
         contacts: []
     }
 
@@ -29,10 +28,10 @@ export default class Homepage extends Component {
             .then((res) => {
                 this.setState({ jobs: res.data })
             })
-        axios.get('/api/v1/response/')
-            .then((res) => {
-                this.setState({ responses: res.data })
-            })
+        // axios.get('/api/v1/response/')
+        //     .then((res) => {
+        //         this.setState({ responses: res.data })
+        //     })
         axios.get('/api/v1/contact/')
             .then((res) => {
                 this.setState({ contacts: res.data })
@@ -55,11 +54,11 @@ export default class Homepage extends Component {
                 <div>{job.title} - {job.company}</div>
             )
         })
-        const allResponses = this.state.responses.map((response) => {
-            return (
-                <div>{response.company}</div>
-            )
-        })
+        // const allResponses = this.state.responses.map((response) => {
+        //     return (
+        //         <div>{response.company}</div>
+        //     )
+        // })
         const allContacts = this.state.contacts.map((contact) => {
             return (
                 <div>{contact.name}</div>
@@ -80,10 +79,10 @@ export default class Homepage extends Component {
                         I'm supposed to be showing your jobs
                     {allJobs}
                     </div>
-                    <div>
+                    {/* <div>
                         I'm supposed to be showing your responses
                     {allResponses}
-                    </div>
+                    </div> */}
                     <div>
                         I'm supposed to be showing your contacts
                     {allContacts}

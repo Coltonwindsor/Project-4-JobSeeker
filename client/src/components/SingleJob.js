@@ -24,6 +24,7 @@ export default class SingleJob extends Component {
                 this.setState({ job: res.data })
             })
     }
+
     onChange = (evt) => {
         const value = evt.target.value
         const name = evt.target.name
