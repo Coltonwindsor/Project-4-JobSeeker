@@ -12,7 +12,6 @@ export default class Job extends Component {
             description: '',
             requirements: '',
             salary: '',
-            applied_to: ''
         },
         addJobInvisable: false,
     }
@@ -46,7 +45,6 @@ export default class Job extends Component {
                     description: '',
                     requirements: '',
                     salary: '',
-                    applied_to: ''
                 }
                 this.setState(copyOfState)
             })
@@ -141,16 +139,6 @@ export default class Job extends Component {
                                     name='salary'
                                     onChange={this.onChange}
                                     vlaue={this.state.newJob.salary}
-                                >
-                                </input>
-                            </div>
-                            <div className="inputBoxDiv">
-                                <input
-                                    type='checkbox'
-                                    placeholder='applied_to'
-                                    name='applied_to'
-                                    onChange={this.onChange}
-                                    vlaue={this.state.newJob.applied_to}
                                 >
                                 </input>
                             </div>

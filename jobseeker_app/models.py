@@ -29,7 +29,6 @@ class Job(models.Model):
     description = models.TextField(default = '', blank=True)
     requirements = models.TextField(default = '', blank=True)
     salary = models.IntegerField(default=0)
-    applied_to = models.BooleanField(default=False, blank=True)
 
     def __str__(self):
         return f'{self.company} - {self.title}'

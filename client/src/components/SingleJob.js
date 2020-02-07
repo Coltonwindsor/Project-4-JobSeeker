@@ -12,7 +12,6 @@ export default class SingleJob extends Component {
             description: '',
             requirements: '',
             salary: '',
-            applied_to: ''
         },
         redirect: false,
         updateFormInvisable: false
@@ -68,9 +67,6 @@ export default class SingleJob extends Component {
                         </div>
                         <div>
                             {this.state.job.salary}
-                        </div>
-                        <div>
-                            {this.state.job.applied_to}
                         </div>
                     </div>) : null}
                 {this.state.updateFormInvisable === false ?
@@ -132,14 +128,6 @@ export default class SingleJob extends Component {
                                     name="salary"
                                     placeholder='salary'
                                     value={this.state.job.salary} />
-                            </div>
-                            <div className='inputBoxDiv'>
-                                <input
-                                    onChange={this.onChange}
-                                    type="checkbox"
-                                    name="applied_to"
-                                    placeholder='applied to'
-                                    value={this.state.job.applied_to} />
                             </div>
                             <div className='inputBoxDiv'>
                                 <input type="submit"
