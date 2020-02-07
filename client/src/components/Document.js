@@ -1,18 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-
+import { Link } from 'react-router-dom'
 
 export default class Document extends Component {
     state = {
         documents: [],
-        document: {
-            user: '',
-            resume: '',
-            cover_letter: '',
-            linkedin_link: '',
-            github_link: '',
-            portfolio_link: ''
-        },
         newDocument: {
             user: '',
             resume: '',
@@ -22,7 +14,6 @@ export default class Document extends Component {
             portfolio_link: ''
         },
         addDocumentInvisable: false,
-        redirect: false,
     }
     componentDidMount() {
         this.reloadDocumentsPage()
@@ -42,12 +33,12 @@ export default class Document extends Component {
     }
     onSubmit = (evt) => {
         evt.preventDefault()
-        axios.post(`/api/v1/document/`, this.state.document)
+        axios.post('/api/v1/document/', this.state.newDocument)
             .then(() => {
                 this.reloadDocumentsPage()
                 this.toggleAddDocumentForm()
                 const copyOfState = { ...this.state }
-                copyOfState.document = {
+                copyOfState.newDocument = {
                     user: '',
                     resume: '',
                     cover_letter: '',
@@ -58,74 +49,56 @@ export default class Document extends Component {
                 this.setState(copyOfState)
             })
     }
-    onUpdateSubmit = (evt) => {
-        evt.preventDefault()
-        axios.put(`/api/v1/document/${this.props.match.params.documentId}/`, this.state.newDocument)
-            .then(() => {
-                this.setState({ redirect: true })
-            })
-    }
     toggleAddDocumentForm = () => {
         const toggle = !this.state.addDocumentInvisable;
         this.setState({ addDocumentInvisable: toggle })
     }
-    toggleUpdateForm = () => {
-        const toggle = !this.state.updateFormInvisable
-        this.setState({ updateFormInvisable: toggle })
-    }
-    deleteDocuments = () => {
-        axios.delete(`/api/v1/document/${this.props.match.params.document}/`)
-            .then(() => {
-                this.setState({ redirect: true })
-            })
-    }
+
     render() {
         const allDocuments = this.state.documents.map((document) => {
             return (
-                <div>
-                    <div>{document.user}</div>
-                    <div>{document.resume}</div>
-                    <div>{document.cover_letter}</div>
-                    <div>{document.linkedin_link}</div>
-                    <div>{document.github_link}</div>
-                    <div>{document.portfolio_link}</div>
-                </div>
+                <Link to={`/document/${document.id}`}><div>{document.user}</div></Link>
             )
         })
         return (
             <div>
-                <h1>Important Documents</h1>
+                <h1>Documents</h1>
                 {this.state.addDocumentInvisable === false ?
                     <div className='addEntryButtonDiv'>
                         <button
                             className="addEntryButton"
                             onClick={this.toggleAddDocumentForm}>
                             Add Documents
-                </button>
-                        <button
-                            className="addEntryButton"
-                            onClick={this.toggleUpdateForm}>
-                            Edit Documents
-                </button>
+                        </button>
                     </div> :
                     <div className='addEntryButtonDiv'>
                         <button
                             className="addEntryButton"
                             onClick={this.toggleAddDocumentForm}>
                             Back
-                </button>
+                        </button>
                     </div>}
-                {this.state.addDocumentInvisable === false ? <div>{allDocuments}</div> : null}
-                {this.state.addDocumentInvisable === true ? (
-                    <div>
+                {this.state.addDocumentInvisable === false ? <div className="documentList">{allDocuments}</div> : null}
+                {this.state.addDocumentInvisable === true ?
+                    (<div>
                         <form onSubmit={this.onSubmit}>
+                            <div className="inputBoxDiv">
+                                <input
+                                    type='text'
+                                    placeholder='Document version name'
+                                    name='user'
+                                    onChange={this.onChange}
+                                    vlaue={this.state.newDocument.user}
+                                >
+                                </input>
+                            </div>
                             <div className="inputBoxDiv">
                                 <input
                                     type='text'
                                     placeholder='resume'
                                     name='resume'
                                     onChange={this.onChange}
-                                    value={this.state.document.resume}
+                                    vlaue={this.state.newDocument.resume}
                                 >
                                 </input>
                             </div>
@@ -135,7 +108,7 @@ export default class Document extends Component {
                                     placeholder='cover letter'
                                     name='cover_letter'
                                     onChange={this.onChange}
-                                    value={this.state.document.cover_letter}
+                                    vlaue={this.state.newDocument.cover_letter}
                                 >
                                 </input>
                             </div>
@@ -145,7 +118,7 @@ export default class Document extends Component {
                                     placeholder='linkedIn link'
                                     name='linkedin_link'
                                     onChange={this.onChange}
-                                    value={this.state.document.linkedin_link}
+                                    vlaue={this.state.newDocument.linkedin_link}
                                 >
                                 </input>
                             </div>
@@ -155,7 +128,7 @@ export default class Document extends Component {
                                     placeholder='github link'
                                     name='github_link'
                                     onChange={this.onChange}
-                                    value={this.state.document.github_link}
+                                    vlaue={this.state.newDocument.github_link}
                                 >
                                 </input>
                             </div>
@@ -165,15 +138,13 @@ export default class Document extends Component {
                                     placeholder='portfolio link'
                                     name='portfolio_link'
                                     onChange={this.onChange}
-                                    value={this.state.document.portfolio_link}
+                                    vlaue={this.state.newDocument.portfolio_link}
                                 >
                                 </input>
                             </div>
-                            <div className='inputBoxDiv'>
-                                <input type="submit"
-                                    value="Add Documents" />
+                            <div className="inputBoxDiv">
+                                <input type="submit" vlaue="Create"></input>
                             </div>
-
                         </form>
                     </div>) : null}
             </div>

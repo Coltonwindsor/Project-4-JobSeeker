@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import HomePage from './components/HomePage'
 import Document from './components/Document'
+import SingleDocument from './components/SingleDocument'
 import Event from './components/Event'
 import SingleEvent from './components/SingleEvent'
 import Job from './components/Job'
@@ -22,6 +23,7 @@ class App extends Component {
           <div><NavBar /></div>
           <Switch>
             <Route exact path='/document' component={Document}></Route>
+            <Route exact path='/document/:documentId' component={SingleDocument}></Route>
             <Route exact path='/event' component={Event}></Route>
             <Route exact path='/event/:eventId' component={SingleEvent}></Route>
             <Route exact path='/job' component={Job}></Route>
