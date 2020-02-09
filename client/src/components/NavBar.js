@@ -6,7 +6,7 @@ export default class NavBar extends Component {
         return (
             <div className='header-fix'>
                 <div className='header'>
-                    <p>This is where the logo image will go</p>
+                    <img src='https://i.imgur.com/a20ygXz.png' alt='logo'></img>
                 </div>
                 <div className='navContainer'>
                     <Link to='/' className='nav'><div>Home</div></Link>
