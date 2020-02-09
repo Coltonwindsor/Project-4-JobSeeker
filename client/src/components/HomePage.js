@@ -85,10 +85,17 @@ export default class Homepage extends Component {
             )
         })
         return (
-            <div>
+            <div className='homePageBackground'>
                 <div className='homePagePadding'>
-
-                    <button onClick={this.toggleDocs}>Show Documents</button>
+                    <div className='homePage'>
+                        <h2> - Welcome to JobSeeker -</h2>
+                        <p>This site is built to maximize your job search potential! </p>
+                        <p>Upload multiple versions of resumes and cover letters.</p>
+                        <p>Enhance your networking opportunities by tracking events you'd like to attend.</p>
+                        <p>Manage potential jobs you'd like to apply for.</p>
+                        <p>Create and edit contacts you make along the way.</p>
+                    </div>
+                    {/* <button onClick={this.toggleDocs}>Show Documents</button>
                     <button onClick={this.toggleJobs}>Show Jobs</button>
                     <button onClick={this.toggleEvents}>Show Events</button>
                     <button onClick={this.toggleContacts}>Show Contacts</button>
@@ -115,7 +122,7 @@ export default class Homepage extends Component {
                         <div>
                             - Contacts -
                     {allContacts}
-                        </div> : null}
+                        </div> : null} */}
                 </div>
             </div>
         )
