@@ -57,7 +57,7 @@ export default class Event extends Component {
             )
         })
         return (
-            <div>
+            <div className="padding">
                 <h1>Events</h1>
                 {this.state.addEventInvisable === false ?
                     <div className='addEntryButtonDiv'>

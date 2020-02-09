@@ -49,7 +49,7 @@ export default class SingleDocument extends Component {
 
     render() {
         return (
-            <div>
+            <div className="padding">
                 {this.state.redirect === true ? <Redirect to='/document' /> : null}
                 <h1>{this.state.document.user}</h1>
                 {this.state.updateFormInvisable === false ?

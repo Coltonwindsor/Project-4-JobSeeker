@@ -57,7 +57,7 @@ export default class Contact extends Component {
             )
         })
         return (
-            <div>
+            <div className="padding">
                 <h1>Contacts</h1>
                 {this.state.addContactInvisable === false ?
                     <div className='addEntryButtonDiv'>

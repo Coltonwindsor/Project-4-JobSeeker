@@ -47,7 +47,7 @@ export default class SingleContact extends Component {
 
     render() {
         return (
-            <div>
+            <div className="padding">
                 {this.state.redirect === true ? <Redirect to='/contact' /> : null}
                 <h1>{this.state.contact.name}</h1>
                 {this.state.updateFormInvisable === false ?

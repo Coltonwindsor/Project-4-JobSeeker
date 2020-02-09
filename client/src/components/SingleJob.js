@@ -51,7 +51,7 @@ export default class SingleJob extends Component {
 
     render() {
         return (
-            <div>
+            <div className="padding">
                 {this.state.redirect === true ? <Redirect to='/job' /> : null}
                 <h1>{this.state.job.company} - {this.state.job.title}</h1>
                 {this.state.updateFormInvisable === false ?

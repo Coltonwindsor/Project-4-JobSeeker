@@ -61,7 +61,7 @@ export default class Job extends Component {
             )
         })
         return (
-            <div>
+            <div className="padding">
                 <h1>Jobs</h1>
                 {this.state.addJobInvisable === false ?
                     <div className='addEntryButtonDiv'>

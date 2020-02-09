@@ -9,7 +9,11 @@ export default class Homepage extends Component {
         events: [],
         jobs: [],
         // responses: [],
-        contacts: []
+        contacts: [],
+        displayDocs: false,
+        displayEvents: false,
+        displayJobs: false,
+        displayContacts: false
     }
 
     componentDidMount() {
@@ -36,6 +40,22 @@ export default class Homepage extends Component {
             .then((res) => {
                 this.setState({ contacts: res.data })
             })
+    }
+    toggleDocs = () => {
+        const toggle = !this.state.displayDocs;
+        this.setState({ displayDocs: toggle })
+    }
+    toggleEvents = () => {
+        const toggle = !this.state.displayEvents;
+        this.setState({ displayEvents: toggle })
+    }
+    toggleJobs = () => {
+        const toggle = !this.state.displayJobs;
+        this.setState({ displayJobs: toggle })
+    }
+    toggleContacts = () => {
+        const toggle = !this.state.displayContacts;
+        this.setState({ displayContacts: toggle })
     }
 
     render() {
@@ -66,27 +86,36 @@ export default class Homepage extends Component {
         })
         return (
             <div>
-                <div>
-                    <div>
-                        I'm supposed to be showing your resume
+                <div className='homePagePadding'>
+
+                    <button onClick={this.toggleDocs}>Show Documents</button>
+                    <button onClick={this.toggleJobs}>Show Jobs</button>
+                    <button onClick={this.toggleEvents}>Show Events</button>
+                    <button onClick={this.toggleContacts}>Show Contacts</button>
+                    {this.state.displayDocs === true ?
+                        <div>
+                            - Document Versions -
                     {allDocuments}
-                    </div>
-                    <div>
-                        I'm supposed to be showing your events
+                        </div> : null}
+                    {this.state.displayEvents === true ?
+                        <div>
+                            - Events -
                     {allEvents}
-                    </div>
-                    <div>
-                        I'm supposed to be showing your jobs
+                        </div> : null}
+                    {this.state.displayJobs === true ?
+                        <div>
+                            - Jobs -
                     {allJobs}
-                    </div>
+                        </div> : null}
                     {/* <div>
                         I'm supposed to be showing your responses
                     {allResponses}
                     </div> */}
-                    <div>
-                        I'm supposed to be showing your contacts
+                    {this.state.displayContacts === true ?
+                        <div>
+                            - Contacts -
                     {allContacts}
-                    </div>
+                        </div> : null}
                 </div>
             </div>
         )

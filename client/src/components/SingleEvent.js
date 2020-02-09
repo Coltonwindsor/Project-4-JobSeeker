@@ -47,7 +47,7 @@ export default class SingleEvent extends Component {
 
     render() {
         return (
-            <div>
+            <div className="padding">
                 {this.state.redirect === true ? <Redirect to='/event' /> : null}
                 <h1>{this.state.event.title}</h1>
                 {this.state.updateFormInvisable === false ?

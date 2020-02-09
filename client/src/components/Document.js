@@ -61,7 +61,7 @@ export default class Document extends Component {
             )
         })
         return (
-            <div>
+            <div className="padding">
                 <h1>Documents</h1>
                 {this.state.addDocumentInvisable === false ?
                     <div className='addEntryButtonDiv'>
