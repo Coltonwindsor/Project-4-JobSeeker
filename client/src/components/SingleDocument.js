@@ -87,11 +87,12 @@ export default class SingleDocument extends Component {
                                     onChange={this.onChange}
                                     type="text"
                                     name="user"
-                                    placeholder='Documents version name'
+                                    placeholder='Document version name'
                                     value={this.state.document.user} />
                             </div>
                             <div className='inputBoxDiv'>
-                                <input
+                                <textarea
+                                    rows="10" cols="75"
                                     onChange={this.onChange}
                                     type="text"
                                     name="resume"
@@ -99,7 +100,8 @@ export default class SingleDocument extends Component {
                                     value={this.state.document.resume} />
                             </div>
                             <div className='inputBoxDiv'>
-                                <input
+                                <textarea
+                                    rows="10" cols="75"
                                     onChange={this.onChange}
                                     type="text"
                                     name="cover_letter"

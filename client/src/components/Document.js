@@ -57,7 +57,7 @@ export default class Document extends Component {
     render() {
         const allDocuments = this.state.documents.map((document) => {
             return (
-                <Link to={`/document/${document.id}`}><div>{document.user}</div></Link>
+                <Link to={`/document/${document.id}`}><div className='singleContainer'>{document.user}</div></Link>
             )
         })
         return (
@@ -78,7 +78,7 @@ export default class Document extends Component {
                             Back
                         </button>
                     </div>}
-                {this.state.addDocumentInvisable === false ? <div className="documentList">{allDocuments}</div> : null}
+                {this.state.addDocumentInvisable === false ? <div className="list">{allDocuments}</div> : null}
                 {this.state.addDocumentInvisable === true ?
                     (<div>
                         <form onSubmit={this.onSubmit}>
@@ -93,24 +93,26 @@ export default class Document extends Component {
                                 </input>
                             </div>
                             <div className="inputBoxDiv">
-                                <input
+                                <textarea
+                                    rows="20" cols="95"
                                     type='text'
                                     placeholder='resume'
                                     name='resume'
                                     onChange={this.onChange}
                                     vlaue={this.state.newDocument.resume}
                                 >
-                                </input>
+                                </textarea>
                             </div>
                             <div className="inputBoxDiv">
-                                <input
+                                <textarea
+                                    rows="20" cols="95"
                                     type='text'
                                     placeholder='cover letter'
                                     name='cover_letter'
                                     onChange={this.onChange}
                                     vlaue={this.state.newDocument.cover_letter}
                                 >
-                                </input>
+                                </textarea>
                             </div>
                             <div className="inputBoxDiv">
                                 <input

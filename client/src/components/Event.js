@@ -53,7 +53,7 @@ export default class Event extends Component {
     render() {
         const allEvents = this.state.events.map((event) => {
             return (
-                <Link to={`/event/${event.id}`}><div>{event.title}</div></Link>
+                <Link to={`/event/${event.id}`}><div className='singleContainer'>{event.title}</div></Link>
             )
         })
         return (
@@ -74,7 +74,7 @@ export default class Event extends Component {
                             Back
                         </button>
                     </div>}
-                {this.state.addEventInvisable === false ? <div className="eventList">{allEvents}</div> : null}
+                {this.state.addEventInvisable === false ? <div className="list">{allEvents}</div> : null}
                 {this.state.addEventInvisable === true ?
                     (<div>
                         <form onSubmit={this.onSubmit}>

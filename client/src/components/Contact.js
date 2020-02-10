@@ -53,7 +53,7 @@ export default class Contact extends Component {
     render() {
         const allContacts = this.state.contacts.map((contact) => {
             return (
-                <Link className='previewAllInside' to={`/contact/${contact.id}`}><div>{contact.name}</div></Link>
+                <Link className='previewAllInside' to={`/contact/${contact.id}`}><div className='singleContainer'>{contact.name}</div></Link>
             )
         })
         return (
@@ -74,7 +74,7 @@ export default class Contact extends Component {
                             Back
                         </button>
                     </div>}
-                {this.state.addContactInvisable === false ? <div className="contactList">{allContacts}</div> : null}
+                {this.state.addContactInvisable === false ? <div className="list">{allContacts}</div> : null}
                 {this.state.addContactInvisable === true ?
                     (<div>
                         <form onSubmit={this.onSubmit}>

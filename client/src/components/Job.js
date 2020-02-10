@@ -57,7 +57,7 @@ export default class Job extends Component {
     render() {
         const allJobs = this.state.jobs.map((job) => {
             return (
-                <Link to={`/job/${job.id}`}><div>{job.company} - {job.title}</div></Link>
+                <Link to={`/job/${job.id}`}><div className='singleJobContainer'>{job.company} - {job.title}</div></Link>
             )
         })
         return (
@@ -78,7 +78,7 @@ export default class Job extends Component {
                             Back
                         </button>
                     </div>}
-                {this.state.addJobInvisable === false ? <div className="jobList">{allJobs}</div> : null}
+                {this.state.addJobInvisable === false ? <div className="list">{allJobs}</div> : null}
                 {this.state.addJobInvisable === true ?
                     (<div>
                         <form onSubmit={this.onSubmit}>

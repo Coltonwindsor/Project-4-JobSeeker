@@ -2,6 +2,10 @@ a {
   text-decoration: none;
   font-family: "Sriracha", cursive;
 }
+html {
+  background: rgb(224, 227, 227);
+  background-repeat: repeat;
+}
 .header {
   display: flex;
   justify-content: center;
@@ -71,12 +75,6 @@ a {
 .padding {
   padding-top: 20px;
   height: 100vh;
-  background: rgb(224, 227, 227);
-  background: linear-gradient(
-    0deg,
-    rgba(224, 227, 227, 1) 0%,
-    rgba(210, 213, 218, 1) 100%
-  );
 }
 .addEntryButtonDiv {
   display: flex;
@@ -168,4 +166,72 @@ h1 {
   color: whitesmoke;
   text-shadow: 2px 2px 2px black;
   font-family: "Sriracha", cursive;
+}
+input {
+  border: solid black 2px;
+  border-radius: 10px;
+  box-shadow: 10px 9px 15px 0px rgba(0, 0, 0, 0.41);
+  text-align: center;
+  width: 20%;
+}
+textarea {
+  width: auto;
+  border: solid black 2px;
+  border-radius: 10px;
+  box-shadow: 10px 9px 15px 0px rgba(0, 0, 0, 0.41);
+  text-align: left;
+}
+.inputBoxDiv {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+.entryText {
+  word-wrap: break-word;
+  font-family: "Patrick Hand SC", cursive;
+  margin: 30px;
+  font-size: 30px;
+}
+.list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+.singleContainer {
+  border: solid black 3px;
+  border-radius: 20px;
+  margin: 3px;
+  width: 150px;
+  height: 30px;
+  background-color: rgb(57, 62, 70);
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Sriracha", cursive;
+  font-size: 15px;
+  text-shadow: 2px 2px 2px black;
+  box-shadow: 10px 9px 15px 0px rgba(0, 0, 0, 0.41);
+  padding: 5px;
+}
+.singleJobContainer {
+  border: solid black 3px;
+  border-radius: 20px;
+  margin: 3px;
+  width: 150px;
+  height: 50px;
+  background-color: rgb(57, 62, 70);
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Sriracha", cursive;
+  font-size: 15px;
+  text-shadow: 2px 2px 2px black;
+  box-shadow: 10px 9px 15px 0px rgba(0, 0, 0, 0.41);
+  padding: 5px;
 }
