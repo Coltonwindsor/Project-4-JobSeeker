@@ -61,7 +61,7 @@ export default class Homepage extends Component {
     render() {
         const allDocuments = this.state.documents.map((document) => {
             return (
-                <div>{document.resume}</div>
+                <div>{document.user}</div>
             )
         })
         const allEvents = this.state.events.map((event) => {
