@@ -18,12 +18,10 @@ JobSeeker provides a platform for... job seekers... to store information importa
 
 ### Project Board: [Link to Trello](https://trello.com/b/WslUkqeD/project-4-jobseeker)
 
-### Wireframes:
+### Wireframe:
 
-![WireFrame]()
-![WireFrame]()
-![WireFrame]()
+![WireFrame](https://i.imgur.com/O67zWrT.jpg)
 
 ### ERD:
 
-![ERD]()
+![ERD](https://i.imgur.com/gRIlowX.jpg)
