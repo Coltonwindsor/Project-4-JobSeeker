@@ -51,7 +51,7 @@ export default class SingleContact extends Component {
                 {this.state.redirect === true ? <Redirect to='/contact' /> : null}
                 <h1>{this.state.contact.name}</h1>
                 {this.state.updateFormInvisable === false ?
-                    (<div>
+                    (<div className='entryText'>
                         <div>
                             {this.state.contact.company}
                         </div>

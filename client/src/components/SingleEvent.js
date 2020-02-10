@@ -51,7 +51,7 @@ export default class SingleEvent extends Component {
                 {this.state.redirect === true ? <Redirect to='/event' /> : null}
                 <h1>{this.state.event.title}</h1>
                 {this.state.updateFormInvisable === false ?
-                    (<div>
+                    (<div className='entryText'>
                         <div>
                             {this.state.event.location}
                         </div>

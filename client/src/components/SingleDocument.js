@@ -53,8 +53,8 @@ export default class SingleDocument extends Component {
                 {this.state.redirect === true ? <Redirect to='/document' /> : null}
                 <h1>{this.state.document.user}</h1>
                 {this.state.updateFormInvisable === false ?
-                    (<div>
-                        <div>
+                    (<div className='entryText'>
+                        <div >
                             {this.state.document.resume}
                         </div>
                         <div>

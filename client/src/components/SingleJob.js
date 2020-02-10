@@ -55,7 +55,7 @@ export default class SingleJob extends Component {
                 {this.state.redirect === true ? <Redirect to='/job' /> : null}
                 <h1>{this.state.job.company} - {this.state.job.title}</h1>
                 {this.state.updateFormInvisable === false ?
-                    (<div>
+                    (<div className='entryText'>
                         <div>
                             {this.state.job.date_posted}
                         </div>
