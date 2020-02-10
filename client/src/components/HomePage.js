@@ -89,40 +89,42 @@ export default class Homepage extends Component {
                 <div className='homePagePadding'>
                     <div className='homePage'>
                         <h2> - Welcome to JobSeeker -</h2>
-                        <p>This site is built to maximize your job search potential! </p>
+                        <p>This site is built to maximize your job search experience! </p>
                         <p>Upload multiple versions of resumes and cover letters.</p>
                         <p>Enhance your networking opportunities by tracking events you'd like to attend.</p>
                         <p>Manage potential jobs you'd like to apply for.</p>
                         <p>Create and edit contacts you make along the way.</p>
                     </div>
-                    {/* <button onClick={this.toggleDocs}>Show Documents</button>
-                    <button onClick={this.toggleJobs}>Show Jobs</button>
-                    <button onClick={this.toggleEvents}>Show Events</button>
-                    <button onClick={this.toggleContacts}>Show Contacts</button>
-                    {this.state.displayDocs === true ?
-                        <div>
-                            - Document Versions -
+                    <div className='homeToggleButtonDiv'>
+                        <button className='homeToggleButton' onClick={this.toggleDocs}>Preview Documents</button>
+                        <button className='homeToggleButton' onClick={this.toggleJobs}>Preview Jobs</button>
+                        <button className='homeToggleButton' onClick={this.toggleEvents}>Preview Events</button>
+                        <button className='homeToggleButton' onClick={this.toggleContacts}>Preview Contacts</button>
+                        {this.state.displayDocs === true ?
+                            <div className='previews'>
+                                - Document Versions -
                     {allDocuments}
-                        </div> : null}
-                    {this.state.displayEvents === true ?
-                        <div>
-                            - Events -
+                            </div> : null}
+                        {this.state.displayEvents === true ?
+                            <div className='previews'>
+                                - Events -
                     {allEvents}
-                        </div> : null}
-                    {this.state.displayJobs === true ?
-                        <div>
-                            - Jobs -
+                            </div> : null}
+                        {this.state.displayJobs === true ?
+                            <div className='previews'>
+                                - Jobs -
                     {allJobs}
-                        </div> : null}
-                    {/* <div>
+                            </div> : null}
+                        {/* <div className='previews'>
                         I'm supposed to be showing your responses
                     {allResponses}
                     </div> */}
-                    {this.state.displayContacts === true ?
-                        <div>
-                            - Contacts -
+                        {this.state.displayContacts === true ?
+                            <div className='previews'>
+                                - Contacts -
                     {allContacts}
-                        </div> : null} */}
+                            </div> : null}
+                    </div>
                 </div>
             </div>
         )

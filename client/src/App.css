@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+  font-family: "Sriracha", cursive;
+}
 .header {
   display: flex;
   justify-content: center;
@@ -18,7 +22,7 @@
   padding: 10px;
   border: solid black 2px;
   border-radius: 10px;
-  width: 50%;
+  width: 33%;
 }
 .homePageBackground {
   background-image: url(https://i.imgur.com/xkOkPRh.jpg);
@@ -117,7 +121,51 @@
 }
 h1 {
   text-align: center;
+  color: black;
+  font-family: "Sriracha", cursive;
+  text-shadow: -1px 0 whitesmoke, 0 1px whitesmoke, 1px 0 whitesmoke,
+    0 -1px whitesmoke;
+}
+.homeToggleButtonDiv {
+  margin-top: 30px;
+}
+.homeToggleButton {
+  box-shadow: 10px 9px 15px 0px rgba(0, 0, 0, 0.41);
+  background: linear-gradient(
+    0deg,
+    rgb(69, 71, 71) 0%,
+    rgba(57, 62, 70, 1) 100%
+  );
+  background-color: black;
+  border-radius: 17px;
+  border: 3px solid black;
+  display: inline-block;
+  cursor: pointer;
   color: whitesmoke;
   font-family: "Sriracha", cursive;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: 15px;
+  padding: 6px 13px;
+  text-decoration: none;
+  text-shadow: 2px 2px 2px black;
+  margin-right: 3px;
+}
+.homeToggleButton:hover {
+  background: linear-gradient(
+    0deg,
+    rgb(138, 143, 143) 0%,
+    rgba(57, 62, 70, 1) 100%
+  );
+  background-color: black;
+}
+.homeToggleButton:active {
+  position: relative;
+  top: 1px;
+}
+.homeToggleButton:focus {
+  outline: none;
+}
+.previews {
+  color: whitesmoke;
+  text-shadow: 2px 2px 2px black;
+  font-family: "Sriracha", cursive;
 }
